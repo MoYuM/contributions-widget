@@ -14,6 +14,15 @@
 		670D6BF529D972CD00BD2B8B /* Github_ContributionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670D6BF429D972CD00BD2B8B /* Github_ContributionsTests.swift */; };
 		670D6BFF29D972CD00BD2B8B /* Github_ContributionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670D6BFE29D972CD00BD2B8B /* Github_ContributionsUITests.swift */; };
 		670D6C0129D972CD00BD2B8B /* Github_ContributionsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670D6C0029D972CD00BD2B8B /* Github_ContributionsUITestsLaunchTests.swift */; };
+		670D6C1429D9751000BD2B8B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 670D6C1329D9751000BD2B8B /* WidgetKit.framework */; };
+		670D6C1629D9751000BD2B8B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 670D6C1529D9751000BD2B8B /* SwiftUI.framework */; };
+		670D6C1929D9751000BD2B8B /* contributions_widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670D6C1829D9751000BD2B8B /* contributions_widgetBundle.swift */; };
+		670D6C1B29D9751000BD2B8B /* contributions_widgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670D6C1A29D9751000BD2B8B /* contributions_widgetLiveActivity.swift */; };
+		670D6C1D29D9751000BD2B8B /* contributions_widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670D6C1C29D9751000BD2B8B /* contributions_widget.swift */; };
+		670D6C2029D9751200BD2B8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 670D6C1F29D9751200BD2B8B /* Assets.xcassets */; };
+		670D6C2229D9751200BD2B8B /* contributions_widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 670D6C1E29D9751000BD2B8B /* contributions_widget.intentdefinition */; };
+		670D6C2329D9751200BD2B8B /* contributions_widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 670D6C1E29D9751000BD2B8B /* contributions_widget.intentdefinition */; };
+		670D6C2629D9751200BD2B8B /* contributions widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 670D6C1129D9751000BD2B8B /* contributions widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +40,28 @@
 			remoteGlobalIDString = 670D6BDF29D972CC00BD2B8B;
 			remoteInfo = "Github Contributions";
 		};
+		670D6C2429D9751200BD2B8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 670D6BD829D972CC00BD2B8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 670D6C1029D9751000BD2B8B;
+			remoteInfo = "contributions widgetExtension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		670D6C2A29D9751200BD2B8B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				670D6C2629D9751200BD2B8B /* contributions widgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		670D6BE029D972CC00BD2B8B /* Github Contributions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github Contributions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +74,15 @@
 		670D6BFA29D972CD00BD2B8B /* Github ContributionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Github ContributionsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		670D6BFE29D972CD00BD2B8B /* Github_ContributionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github_ContributionsUITests.swift; sourceTree = "<group>"; };
 		670D6C0029D972CD00BD2B8B /* Github_ContributionsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github_ContributionsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		670D6C1129D9751000BD2B8B /* contributions widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "contributions widgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		670D6C1329D9751000BD2B8B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		670D6C1529D9751000BD2B8B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		670D6C1829D9751000BD2B8B /* contributions_widgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contributions_widgetBundle.swift; sourceTree = "<group>"; };
+		670D6C1A29D9751000BD2B8B /* contributions_widgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contributions_widgetLiveActivity.swift; sourceTree = "<group>"; };
+		670D6C1C29D9751000BD2B8B /* contributions_widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contributions_widget.swift; sourceTree = "<group>"; };
+		670D6C1E29D9751000BD2B8B /* contributions_widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = contributions_widget.intentdefinition; sourceTree = "<group>"; };
+		670D6C1F29D9751200BD2B8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		670D6C2129D9751200BD2B8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +107,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		670D6C0E29D9751000BD2B8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				670D6C1629D9751000BD2B8B /* SwiftUI.framework in Frameworks */,
+				670D6C1429D9751000BD2B8B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +125,8 @@
 				670D6BE229D972CC00BD2B8B /* Github Contributions */,
 				670D6BF329D972CD00BD2B8B /* Github ContributionsTests */,
 				670D6BFD29D972CD00BD2B8B /* Github ContributionsUITests */,
+				670D6C1729D9751000BD2B8B /* contributions widget */,
+				670D6C1229D9751000BD2B8B /* Frameworks */,
 				670D6BE129D972CC00BD2B8B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +137,7 @@
 				670D6BE029D972CC00BD2B8B /* Github Contributions.app */,
 				670D6BF029D972CD00BD2B8B /* Github ContributionsTests.xctest */,
 				670D6BFA29D972CD00BD2B8B /* Github ContributionsUITests.xctest */,
+				670D6C1129D9751000BD2B8B /* contributions widgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +178,28 @@
 			path = "Github ContributionsUITests";
 			sourceTree = "<group>";
 		};
+		670D6C1229D9751000BD2B8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				670D6C1329D9751000BD2B8B /* WidgetKit.framework */,
+				670D6C1529D9751000BD2B8B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		670D6C1729D9751000BD2B8B /* contributions widget */ = {
+			isa = PBXGroup;
+			children = (
+				670D6C1829D9751000BD2B8B /* contributions_widgetBundle.swift */,
+				670D6C1A29D9751000BD2B8B /* contributions_widgetLiveActivity.swift */,
+				670D6C1C29D9751000BD2B8B /* contributions_widget.swift */,
+				670D6C1E29D9751000BD2B8B /* contributions_widget.intentdefinition */,
+				670D6C1F29D9751200BD2B8B /* Assets.xcassets */,
+				670D6C2129D9751200BD2B8B /* Info.plist */,
+			);
+			path = "contributions widget";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,10 +210,12 @@
 				670D6BDC29D972CC00BD2B8B /* Sources */,
 				670D6BDD29D972CC00BD2B8B /* Frameworks */,
 				670D6BDE29D972CC00BD2B8B /* Resources */,
+				670D6C2A29D9751200BD2B8B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				670D6C2529D9751200BD2B8B /* PBXTargetDependency */,
 			);
 			name = "Github Contributions";
 			productName = "Github Contributions";
@@ -183,6 +258,23 @@
 			productReference = 670D6BFA29D972CD00BD2B8B /* Github ContributionsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		670D6C1029D9751000BD2B8B /* contributions widgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 670D6C2729D9751200BD2B8B /* Build configuration list for PBXNativeTarget "contributions widgetExtension" */;
+			buildPhases = (
+				670D6C0D29D9751000BD2B8B /* Sources */,
+				670D6C0E29D9751000BD2B8B /* Frameworks */,
+				670D6C0F29D9751000BD2B8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "contributions widgetExtension";
+			productName = "contributions widgetExtension";
+			productReference = 670D6C1129D9751000BD2B8B /* contributions widgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,6 +296,9 @@
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = 670D6BDF29D972CC00BD2B8B;
 					};
+					670D6C1029D9751000BD2B8B = {
+						CreatedOnToolsVersion = 14.3;
+					};
 				};
 			};
 			buildConfigurationList = 670D6BDB29D972CC00BD2B8B /* Build configuration list for PBXProject "Github Contributions" */;
@@ -222,6 +317,7 @@
 				670D6BDF29D972CC00BD2B8B /* Github Contributions */,
 				670D6BEF29D972CD00BD2B8B /* Github ContributionsTests */,
 				670D6BF929D972CD00BD2B8B /* Github ContributionsUITests */,
+				670D6C1029D9751000BD2B8B /* contributions widgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +346,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		670D6C0F29D9751000BD2B8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				670D6C2029D9751200BD2B8B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -257,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				670D6C2329D9751200BD2B8B /* contributions_widget.intentdefinition in Sources */,
 				670D6BE629D972CC00BD2B8B /* ContentView.swift in Sources */,
 				670D6BE429D972CC00BD2B8B /* Github_ContributionsApp.swift in Sources */,
 			);
@@ -279,6 +384,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		670D6C0D29D9751000BD2B8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				670D6C2229D9751200BD2B8B /* contributions_widget.intentdefinition in Sources */,
+				670D6C1D29D9751000BD2B8B /* contributions_widget.swift in Sources */,
+				670D6C1B29D9751000BD2B8B /* contributions_widgetLiveActivity.swift in Sources */,
+				670D6C1929D9751000BD2B8B /* contributions_widgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -291,6 +407,11 @@
 			isa = PBXTargetDependency;
 			target = 670D6BDF29D972CC00BD2B8B /* Github Contributions */;
 			targetProxy = 670D6BFB29D972CD00BD2B8B /* PBXContainerItemProxy */;
+		};
+		670D6C2529D9751200BD2B8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 670D6C1029D9751000BD2B8B /* contributions widgetExtension */;
+			targetProxy = 670D6C2429D9751200BD2B8B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -412,6 +533,7 @@
 		670D6C0529D972CD00BD2B8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -440,6 +562,7 @@
 		670D6C0629D972CD00BD2B8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -537,6 +660,58 @@
 			};
 			name = Release;
 		};
+		670D6C2829D9751200BD2B8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "contributions widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "contributions widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "moyum.Github-Contributions.contributions-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		670D6C2929D9751200BD2B8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "contributions widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "contributions widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "moyum.Github-Contributions.contributions-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -572,6 +747,15 @@
 			buildConfigurations = (
 				670D6C0B29D972CD00BD2B8B /* Debug */,
 				670D6C0C29D972CD00BD2B8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		670D6C2729D9751200BD2B8B /* Build configuration list for PBXNativeTarget "contributions widgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				670D6C2829D9751200BD2B8B /* Debug */,
+				670D6C2929D9751200BD2B8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

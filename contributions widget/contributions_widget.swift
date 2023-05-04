@@ -68,14 +68,51 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationIntent
 }
 
+// 响应数据的结构体
+struct ContributionCount: Codable {
+    let contributionCount: Int
+    let date: String
+}
+
+struct ContributionDay: Codable {
+    let contributionDays: [ContributionCount]
+}
+
+struct ContributionCalendar: Codable {
+    let totalContributions: Int
+    let weeks: [ContributionDay]
+}
+
+struct ContributionsCollection: Codable {
+    let contributionCalendar: ContributionCalendar
+}
+
+struct User: Codable {
+    let contributionsCollection: ContributionsCollection
+}
+
+struct GraphQLResponse: Codable {
+    let data: DataClass
+}
+
+struct DataClass: Codable {
+    let user: User
+}
+
+
 // 渲染
 struct contributions_widgetEntryView : View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var widgetFamily  // 环境变量
+    @State var responseText: String = "Waiting for response..."
+    
+    init(entry: Provider.Entry) {
+           self.entry = entry
+           fetchData() // 在初始化过程中调用 fetchData 方法
+    }
    
     var body: some View {
         let gridSize = self.getGridItemSize()
-        
            VStack(spacing: 4) {
                ForEach(0..<7) { row in
                    HStack(spacing: 4) {
@@ -90,6 +127,62 @@ struct contributions_widgetEntryView : View {
            .padding(2)
        }
     
+    
+    func fetchData() {
+        // 设置 GraphQL 查询
+        let graphQLQuery = """
+           query($userName:String!) {
+             user(login: $userName){
+               contributionsCollection {
+                 contributionCalendar {
+                   totalContributions
+                   weeks {
+                     contributionDays {
+                       contributionCount
+                       date
+                     }
+                   }
+                 }
+               }
+             }
+           }
+        """
+        
+        let variables = """
+            {
+              "userName": "MoYuM"
+            }
+        """
+        
+        // 创建 GraphQL 请求
+        var request = URLRequest(url: URL(string: "https://api.github.com/graphql")!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer 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", forHTTPHeaderField: "Authorization")
+        
+        let graphQLRequestBody = [
+            "query": graphQLQuery,
+            "variables": variables,
+        ]
+        let jsonData = try! JSONSerialization.data(withJSONObject: graphQLRequestBody, options: [])
+        request.httpBody = jsonData
+        
+        // 发送请求并解析响应数据
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else { return }
+            print("Data is ===> \(data)")
+            do {
+                let decodedResponse = try JSONDecoder().decode(GraphQLResponse.self, from: data)
+//                print(decodedResponse)
+//                DispatchQueue.main.async {
+//                    // 将响应数据放入 entry
+//                    self.responseText = "Your GitHub username is: \(decodedResponse.data.viewer.login)"
+//                }
+            } catch {
+                print("Error decoding JSON response: \(error)")
+            }
+        }.resume()
+    }
     
     func getGridItemSize() -> CGFloat {
            let gridWidth = widgetFamily == .systemSmall ? 110.0 : 230.0
@@ -119,8 +212,12 @@ struct contributions_widget: Widget {
 struct contributions_widget_Previews: PreviewProvider {
     static var previews: some View {
         contributions_widgetEntryView(
-            entry: SimpleEntry(date: Date(),
-            configuration: ConfigurationIntent())
+            entry: SimpleEntry(
+                date: Date(),
+                today: Date(),
+                gridItemsDate: [[Date()]],
+                configuration: ConfigurationIntent()
+            )
         )
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }

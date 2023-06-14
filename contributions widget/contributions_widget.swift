@@ -9,6 +9,10 @@ import WidgetKit
 import SwiftUI
 import Intents
 
+// 30天后过期
+// TODO 看看什么方法能一直有权限
+let GITHUB_TOKEN = "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"
+
 // 提供一系列供 widgetKit 使用的方法
 // placeholder: 在没有内容的时候，显示的东西
 // getSnapshot: 提供这个 widget 在小组件库中的预览样式
@@ -158,7 +162,7 @@ struct contributions_widgetEntryView : View {
         var request = URLRequest(url: URL(string: "https://api.github.com/graphql")!)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer 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", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(GITHUB_TOKEN)", forHTTPHeaderField: "Authorization")
         
         let graphQLRequestBody = [
             "query": graphQLQuery,
@@ -170,7 +174,9 @@ struct contributions_widgetEntryView : View {
         // 发送请求并解析响应数据
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else { return }
-            print("Data is ===> \(data)")
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("Data is ===> \(jsonString)")
+            }
             do {
                 let decodedResponse = try JSONDecoder().decode(GraphQLResponse.self, from: data)
 //                print(decodedResponse)
